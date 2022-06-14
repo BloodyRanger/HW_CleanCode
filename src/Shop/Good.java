@@ -7,30 +7,25 @@ public class Good {
     private double price;
     private String category;
     private String description;
-    private Rating rating;
     private int quantity;
 
-    public Good(int id, String name, double price, String category, String description, Rating rating, int quantity) {
+    public Good(int id, String name, double price, String category, String description, int quantity) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.category = category;
         this.description = description;
-        this.rating = rating;
         this.quantity = quantity;
     }
 
     @Override
     public String toString() {
-        return "Good{" +
-                "id=" + id +
+        return "id = " + id +
                 ", Наименование Товара = '" + name + '\'' +
                 ", Цена = '" + price + '\'' +
                 ", Категория товара = '" + category + '\'' +
                 ", Описание товара = '" + description + '\'' +
-                ", Рейтинг = '" + rating + '\'' +
-                ", Количество = '" + quantity + '\'' +
-                '}';
+                ", Количество = '" + quantity + '\'';
     }
 
     public int getId() {

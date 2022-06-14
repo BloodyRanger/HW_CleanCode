@@ -5,7 +5,7 @@ import Buyers.User;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ShoppingCart {
+public class ShoppingCart implements Printable {
 
     private Map<Integer, Good> cart;
     private User user;
@@ -38,7 +38,7 @@ public class ShoppingCart {
 
     }
 
-        public Map<Integer, Good> getCart() {
+    public Map<Integer, Good> getCart() {
         return cart;
     }
 
