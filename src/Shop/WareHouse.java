@@ -2,7 +2,7 @@ package Shop;
 
 import java.util.HashMap;
 
-public class WareHouse implements Printable{
+public class WareHouse implements Printable, FilterByTag, FilterByPrice{
 
     private HashMap<Integer, Good> wareHouse;
 
