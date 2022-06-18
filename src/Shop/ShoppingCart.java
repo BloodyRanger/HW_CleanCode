@@ -34,9 +34,6 @@ public class ShoppingCart implements Printable {
         cart.clear();
     }
 
-    public void printCart(User user){
-
-    }
 
     public Map<Integer, Good> getCart() {
         return cart;

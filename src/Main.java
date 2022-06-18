@@ -20,22 +20,50 @@ public class Main {
         wareHouse.addGoods(7, "Samsung UE50TU7002U", 46999.99, "TV", "50 inches, Smart Tizen", 4);
         wareHouse.addGoods(8, "LG 43NANO766PA", 37999.99, "TV", "43 inches, Smart", 7);
 
-        User Ivan = new User("Ivanov Ivan", "SPB, Dvorcovaya nab, 34", "+79119111111");
-        ShoppingCart cart = new ShoppingCart(Ivan);
+        User ivan = new User("Ivanov Ivan", "SPB, Dvorcovaya nab, 34", "+79119111111");
+        ShoppingCart cart = new ShoppingCart(ivan);
 
         System.out.println("Товар, доступный для заказа:");
-        wareHouse.print(wareHouse.getWareHouse());
 
         Scanner sc = new Scanner(System.in);
+        int choice = sc.nextInt();
+
         System.out.println('\n' + "Введите цифру, соответствующую действию, которое нужно совершить:\n" +
                 "1. Вывести список товаров, доступных для покупки\n" +
                 "2. Отфильтровать доступные товары по категории\n" +
                 "3. Отфильтровать доступные товары по цене\n" +
                 "4. Показать содержимое корзины\n" +
-                "4. Добавить товар в корзину\n" +
-                "5. Удалить товар из коризны\n" +
-                "6. Очистить корзину\n" +
-                "7. Подтвердить заказ\n" +
-                "8. Завершить покупки");
+                "5. Добавить товар в корзину\n" +
+                "6. Удалить товар из коризны\n" +
+                "7. Очистить корзину\n" +
+                "8. Подтвердить заказ\n" +
+                "9. Завершить покупки");
+
+        switch (choice){
+            case 1:
+                wareHouse.print(wareHouse.getWareHouse());
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                cart.print(cart.getCart());
+                break;
+            case 5:
+                System.out.println("Введите id товара, который Вы хотите добавить в корзину:");
+                cart.addGood(wareHouse.getWareHouse().get(choice));
+                System.out.println("Товар " + wareHouse.getWareHouse().containsKey(choice) + " добавлен в корзину.");
+                break;
+            case 6:
+                System.out.println("Введите id товара, который нужно удалить:");
+                cart.removeGood(wareHouse.getWareHouse().get(choice));
+                System.out.println("Товар " + wareHouse.getWareHouse().containsKey(choice) + " был удален из корзины.");
+                break;
+
+
+
+        }
+
     }
 }
