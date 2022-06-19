@@ -1,7 +1,5 @@
 package Buyers;
 
-import Shop.ShoppingCart;
-
 public class User {
     private String name;
     private String address;
