@@ -1,6 +1,7 @@
 import Buyers.User;
 import Shop.ShoppingCart;
 import Shop.WareHouse;
+
 import java.util.Scanner;
 
 public class Main {
@@ -37,8 +38,7 @@ public class Main {
                     "5. Добавить товар в корзину\n" +
                     "6. Удалить товар из коризны\n" +
                     "7. Очистить корзину\n" +
-                    "8. Подтвердить заказ\n" +
-                    "9. Завершить покупки");
+                    "0. Завершить покупки");
             switch (Integer.parseInt(sc.nextLine())) {
                 case 1:
                     wareHouse.print(wareHouse.getWareHouse());
@@ -67,9 +67,8 @@ public class Main {
                     choice = Integer.parseInt(sc.nextLine());
                     System.out.println("Введите количество товара, которое Вы хотите приобрести:");
                     quant = Integer.parseInt(sc.nextLine());
-                    if (cart.addGood(wareHouse.getWareHouse().get(choice), quant))
-                        wareHouse.getWareHouse().get(choice).setQuantity(wareHouse.getWareHouse().get(choice).getQuantity() - quant);
-                        System.out.println("Товар " + wareHouse.getWareHouse().get(choice).getName() + " добавлен в корзину в количестве " + quant + " штук.");
+                    cart.addGood(wareHouse.getWareHouse(), choice, quant);
+                    System.out.println("Товар " + wareHouse.getWareHouse().get(choice).getName() + " добавлен в корзину в количестве " + quant + " штук.");
                     break;
                 case 6:
                     System.out.println("Введите id товара, который нужно удалить:");
@@ -81,10 +80,7 @@ public class Main {
                     cart.clearCart();
                     System.out.println("Ваша корзина пуста.");
                     break;
-                case 8:
-
-                    break;
-                case 9:
+                case 0:
                     cycle = 1;
                     break;
                 default:
